@@ -3,6 +3,7 @@ using BlazorServerApp.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddServices();
+builder.Services.AddViewModels();
 
 var app = builder.Build();
 

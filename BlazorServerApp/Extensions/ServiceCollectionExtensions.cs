@@ -1,4 +1,7 @@
-﻿namespace BlazorServerApp.Extensions
+﻿using BlazorServerApp.Areas.Admin.ViewModels.Login;
+using BlazorServerApp.ViewModels.Catalog;
+
+namespace BlazorServerApp.Extensions
 {
     public static class ServiceCollectionExtensions
     {
@@ -9,6 +12,14 @@
                 opts.RootDirectory = "/";
             });
             services.AddServerSideBlazor();
+
+            return services;
+        }
+
+        public static IServiceCollection AddViewModels(this IServiceCollection services)
+        {
+            services.AddTransient<LoginVm>();
+            services.AddTransient<CatalogVm>();
 
             return services;
         }
